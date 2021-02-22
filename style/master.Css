@@ -3,13 +3,13 @@ a{text-decoration: none; color:black;}
 body{
   margin:0;
   padding:0;
-
 }
 body *{
 box-sizing: border-box;
 margin:0;
 padding:0;
 }
+
 
 :root{
   --color-background:#111111;
@@ -434,15 +434,199 @@ align-items: baseline;
   height:130px;
   background: black;
 }
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo >*{
+  margin:5px 0;
+}
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo ul li{
+  display: inline;
 
+}
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo h3{
+  font-size: 4vmin;
+}
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo p,
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo ul li{
+  font-size: 0.8em;
+  opacity: 0.7;
 
+}
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo
+ ul:nth-of-type(2) li:nth-of-type(1){
+   padding:0.2em 0.6em;
+ }
 
+ #FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo ul:nth-of-type(2){
+   position: relative;
+ }
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo ul:nth-of-type(2) li:nth-of-type(2){
+background: var(--main-color);
+padding:0.2em 0.6em;
+border-radius: 10px;
+opacity: 1;
+position: absolute;
+right:0;
+top:0;
 
+}
+#FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem .FromOurBlogInfo ul:nth-of-type(2) li:nth-of-type(2) a{
+  color:white;
+}
+#FromOurBlog .FromOurBlog .FromOurBlogButton{
+  text-align: center;
 
+}
+#FromOurBlog .FromOurBlog .FromOurBlogButton a{
+  background: black;
+  color:white;
+  text-transform: uppercase;
+  border-radius: 15px;
+  padding:0.4em;
+  display: inline-block;
+}
+/**Section Our Brand***/
+#OurBrand .OurBrandTitle {
+  text-align: center;
+}
+#OurBrand .OurBrandTitle h2{
+  text-transform: uppercase;
+}
+#OurBrand .OurBrandLogoItems{
+  text-align: center;
+}
+#OurBrand .OurBrandLogoItems .OurBrandlogo{
+width:120px;
+height:100px;
+background: black;
+display: inline-block;
+}
+/*section Insgrame Follow**/
+#SectionInstgrame{
+  background: #EEEEEE;
+  padding:1em 0;
 
+}
+#SectionInstgrame .SectionInstgrameSlider{
+  position: relative;
 
+}
+#SectionInstgrame .SectionInstgrameSlider img{
+  width:100%;
+  height:150px;
+  background: black;
+}
+#SectionInstgrame .SectionInstgrameSlider .InstgrameFollow{
+  position: absolute;
+  left:50%;
+  top:50%;
+  background: #EEEEEE;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
+  padding:0.3em;
+}
+#SectionInstgrame .SectionInstgrameSlider .InstgrameFollow h4{
+  border:1px solid var(--main-color);
+  padding: 0.6em;
+  text-transform: uppercase;
+  font-size: 3vmin;
+}
+/*Footer **/
+footer{
+  background: black;
+  padding: 0.6em 0;
+}
+footer .FooterEmail{
+  background: white;
+  padding: 0.5em 0;
+  transform: translateY(-50%);
+  width: 90%;
+  margin: auto;
+}
+footer .FooterEmail form{
+  display: table;
+  border: 1px solid var(--main-color);
+  margin: auto;
+    border-radius: 15px;
 
+}
+footer .FooterEmail form div{
+  display: table-cell;
+}
+footer .FooterEmail form div:nth-of-type(1){
 
+}
+footer .FooterEmail form div input{
+  border: 0;
+  background: none;
+}
+footer .FooterEmail form div input:focus{
+  border: 0;
+  outline: 0;
+}
+
+footer .FooterEmail form div> *{
+  padding:0.6em 0.6em;;
+}
+footer .FooterEmail form div button{
+  background: var(--main-color);
+  border: 0;
+  border-radius: 15px;
+}
+footer .FooterSection{
+  margin: 0 2em;
+}
+footer .FooterSection ul{
+  display: block;
+}
+footer .FooterSection ul li a,
+footer .FooterSection ul li span{
+  color: white;
+}
+footer .FooterSection ul hr{
+  border: 0;
+  height: 1px;
+  width: 70%;
+
+  background: var(--main-color);
+}
+footer .FooterSection ul li:nth-of-type(1){
+  text-transform: uppercase;
+  color:white;
+}
+footer .FooterSection ul li:not(:nth-of-type(1)){
+  opacity: 0.6;
+  margin: 5px 0;
+}
+footer .FooterPayment{
+  text-align: center;
+}
+footer .FooterPayment  > span{
+  color:white;
+}
+
+footer .FooterPayment .Cards ul li{
+  display: inline;
+}
+footer .FooterPayment .Cards ul li img{
+  height:20px;
+  width:30px;
+  background: white;
+}
+footer .FooterCopyright{
+background: var(--main-color);
+text-align: center;
+}
+footer .FooterCopyright p{
+  font-size: 0.6em;;
+}
+footer .CopyrightSocialMedia ul li{
+  display: inline;
+}
+footer .CopyrightSocialMedia ul li img{
+
+ height:20px;
+ width:30px;
+ background: black;
+}
 
 
 
