@@ -10,7 +10,7 @@ margin:0;
 padding:0;
 }
 
-
+input[type="checkbox"]{display: none;}
 :root{
   --color-background:#111111;
   --main-color:#f89d18;
@@ -25,7 +25,9 @@ header{
   font-size: 2em;
   display: inline;
   height:40px;
+
 }
+
 #logo span{
   position: absolute;
   font-size: 0.5em;
@@ -41,20 +43,9 @@ header{
   width: 100%;
   height:7vmin;
   padding:1vmin;
+  white-space: nowrap;
 }
-#BarParamter{
-  display:inline-block;
-}
-#BarParamter li{
-  display:inline;
 
-}
-#BarParamter li a{
-  color:white;
-}
-#BarParamter li:nth-child(1){
-  border-right:1px solid white;
-}
 #BarAcces{
   display: inline-block;
 }
@@ -63,6 +54,7 @@ header{
 }
 #BarAcces li a{
   color:white;
+  font-size: 4vmin;
 }
 #HeaderCompany{
   border-bottom:1px solid var(--main-color);
@@ -117,35 +109,146 @@ header .ArrowForNav span{
   margin: 5px 0;
 }
 #navBar{
-
 background: white;
 width:70%;
 border-right: 1px solid var(--main-color);
+position: absolute;
+left:-100%;
+top:0;
+z-index: 10;
+height: 100vmin;
+transition: 1s left;
 }
+#navBar ul{
+  position: relative;
+}
+#navBar ul span{
+  position: absolute;
+  left:100%;
+  top:0%;
+  background: white;
+}
+
 #navBar li{
   padding:1vmin;
   border-bottom: 1px solid var(--main-color);
   font-weight: 900;
   text-transform: uppercase;
 }
+#navBar li a{
+  font-size: 4vmin;
+}
+#navBar .CloseNav{
+  width:32px;
+  height:32px;
+  position: relative;
+  opacity: 0.6;
+  transform: translateY(50%);
+}
+#navBar .CloseNav::before,.CloseNav::after{
+  content:"";
+  height:2px;
+  width:25px;
+  background: black;
+  position: absolute;
+}
+#navBar .CloseNav::before{
+  transform: rotate(45deg);
+}
+#navBar .CloseNav::after{
+  transform: rotate(-45deg);
+}
+#navBar .CloseNav:hover{
+  opacity: 1;
+}
+
+
+input[id="MenuShow"]:checked + #navBar{left:0%;}
+
+
 /**section Slider**/
 #SliderSection{
-  height:60vmax;
+  height:60vmin;
   background: yellow;
   position: relative;
 }
 #SliderSection .sliderItem{
-  white-space: nowrap;
+position: relative;
+
 }
 #SliderSection .sliderItem .item{
   display:inline-block;
   width: 100%;
-  background: red;
+  position: absolute;
+  left:0%;
+  top:0%;
+    height:60vmin;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#SliderSection .sliderItem .slider1{
+  background-image: url('../assests/img/backroundSlider3.png');
+}
+#SliderSection .sliderItem .slider2{
+  background-image: url('../assests/img/backroundSlider2.png');
+}
+#SliderSection .sliderItem .slider3{
+  background-image: url('../assests/img/backroundSlider1.png');
+
+}
+#SliderSection .sliderItem .item .SliderTitle{
+position: absolute;
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+width:70%;
+}
+#SliderSection .sliderItem .item .SliderTitle > *{
+  margin:2vmin;
+}
+
+#SliderSection .sliderItem .item .SliderTitle h1{
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+#SliderSection .sliderItem .item .SliderTitle .ButtonShopNow a{
+  padding:0.3em 0.6em;
+  background: black;
+  border-radius: 20px;
+  color:white;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+#SliderSection .sliderItem .slider2 .SliderTitle{
+  color:white;
+}
+#SliderSection .sliderItem .slider2 .SliderTitle span{
+  color:var(--main-color);
+}
+#SliderSection .sliderItem .slider2 .SliderTitle .ButtonShopNow a,
+#SliderSection .sliderItem .slider3 .SliderTitle .ButtonShopNow a{
+  background: var(--main-color);
+}
+#SliderSection .sliderItem .slider3 .SliderTitle span:nth-of-type(1){
+  color:var(--main-color);
+}
+#SliderSection .sliderItem .slider3 .SliderTitle span:nth-of-type(2){
+  text-transform: uppercase;
+}
+
+#ArrowSection{
+
 }
 #ArrowSection .arrow{
   background:var(--color-background);
   display: inline-block;
   padding:0.5em;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
 }
 #ArrowSection .arrow span{
   display: inline-block;
@@ -153,37 +256,75 @@ border-right: 1px solid var(--main-color);
   width:15px;
   transform: rotate(45deg);
 }
+#ArrowSection .ArrowLef {
+  left:0;
+}
+
+#ArrowSection .ArrowRight {
+  right:0;
+}
 #ArrowSection .ArrowLef span{
   border-bottom: 3px solid white;
   border-left:3px solid white;
+
 }
 #ArrowSection .ArrowRight span{
   border-top:3px solid white;
   border-right:3px solid white;
+
 }
 /*****/
+
 #SectionProduct .productInfo .Services{
   background: var(--color-background);
   width:250px;
   height:100px;
   margin:10px;
-  padding:5px;
+  padding: 5px;
+  position: relative;
+}
+#SectionProduct .productInfo .Services:nth-of-type(1):before{
+  content:"";
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  opacity: 0.1;
+  background-image: url("../assests/img/MoneyBackGurantit.png");
+}
+#SectionProduct .productInfo .Services:nth-of-type(2):before{
+  content:"";
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  opacity: 0.1;
+  background-image: url("../assests/img/ShippingTruck.png");
+}
+#SectionProduct .productInfo .Services:nth-of-type(3):before{
+  content:"";
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  opacity: 0.1;
+  background-image: url("../assests/img/ServiceCentrel.png");
 }
 #SectionProduct .productInfo .Services .block{
   border: 1px solid var(--main-color);
   width:230px;
   height:90px;
   margin: auto;
+  padding:0.7em 0;
   text-align: center;
 }
-#SectionProduct .productInfo .Services .block .Icon{
-
-}
-#SectionProduct .productInfo .Services .block .Icon img{
-  height:20px;
+#SectionProduct .productInfo .Services .block .Icon svg{
   width:20px;
-  background: var(--main-color);
 }
+
 #SectionProduct .productInfo .Services .block h3{
   color:white;
   text-transform: uppercase;
@@ -194,7 +335,11 @@ border-right: 1px solid var(--main-color);
   opacity:0.8;
 }
 #SectionProduct .productInfo .Productheighlet{
+  padding:0.5em;
   background: var(--color-background);
+  background-image: url("../assests/img/ChildrenCollection.png");
+  background-repeat: no-repeat;
+  background-position: right;
   height:90px;
   width:250px;
 }
@@ -213,8 +358,13 @@ color:white;
 
 #SectionProduct .productInfo .NewCollection{
   background:var(--main-color);
+  background-image: url("../assests/img/collectionMen.jpg");
+  background-repeat: no-repeat;
+  background-position: right;
   height:90px;
   width:250px;
+  padding:0.5em;
+
 }
 #SectionProduct .productInfo .NewCollection > span:nth-of-type(1){
   color:white;
