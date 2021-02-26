@@ -7,6 +7,7 @@ ItemProduct.innerHTML =`
   height:430px;
   background:#EEEEEE;
   display:inline-block;
+
 }
 .ItemProduct .ItemProductImage{
 
@@ -114,7 +115,6 @@ class item extends HTMLElement{
     super();
     this.attachShadow({mode:'open'});
     this.shadowRoot.appendChild(ItemProduct.content.cloneNode(true));
-    this.innerHTML =`<h1>hello </h1>`
 
   }
 }
@@ -122,3 +122,26 @@ window.customElements.define('item-show',item);
 
 
 const Postion = document.querySelector('.RecommendedProduct');
+/************/
+
+/*For display item depending on type**/
+const NewProduct = document.querySelector('.NewProduct');
+const ProductShow = NewProduct.querySelector('.NewProductItem');
+NewProduct.querySelector('ul').addEventListener("click",(e)=>{
+  e.preventDefault();
+
+  if(e.target.tagName == 'A'){
+
+    for(let i =0;i<ProductShow.children.length;i++)
+      {
+        if(ProductShow.children[i].getAttribute('type')!=e.target.text && e.target.text !='All' ){
+          ProductShow.children[i].style.display='none';
+        }
+        else {
+          ProductShow.children[i].style.display='inline-block';
+        }
+      }
+
+  }
+
+})
