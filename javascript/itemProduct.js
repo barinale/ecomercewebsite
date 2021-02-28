@@ -1,4 +1,4 @@
-console.log('test')
+
 const ItemProduct = document.createElement('template');
 ItemProduct.innerHTML =`
 <style>
@@ -7,7 +7,7 @@ ItemProduct.innerHTML =`
   height:430px;
   background:#EEEEEE;
   display:inline-block;
-
+  margin-top:10px;
 }
 .ItemProduct .ItemProductImage{
 
@@ -110,7 +110,7 @@ span:nth-of-type(2){
 </div>
 `;
 
-class item extends HTMLElement{
+export default class item extends HTMLElement{
   constructor(){
     super();
     this.attachShadow({mode:'open'});
@@ -125,23 +125,3 @@ const Postion = document.querySelector('.RecommendedProduct');
 /************/
 
 /*For display item depending on type**/
-const NewProduct = document.querySelector('.NewProduct');
-const ProductShow = NewProduct.querySelector('.NewProductItem');
-NewProduct.querySelector('ul').addEventListener("click",(e)=>{
-  e.preventDefault();
-
-  if(e.target.tagName == 'A'){
-
-    for(let i =0;i<ProductShow.children.length;i++)
-      {
-        if(ProductShow.children[i].getAttribute('type')!=e.target.text && e.target.text !='All' ){
-          ProductShow.children[i].style.display='none';
-        }
-        else {
-          ProductShow.children[i].style.display='inline-block';
-        }
-      }
-
-  }
-
-})
