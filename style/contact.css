@@ -1,0 +1,102 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+:root{
+  --color-background:#111111;
+  --main-color:#f89d18;
+}
+.content{
+  width:90%;
+  margin: auto;
+}
+body{
+  height:1500px;
+}
+body > div:not(:first-of-type(div)){
+  margin:1em 0;
+}
+/**ConctactImage*/
+#ConctactImage{
+  height:30vmin;
+  background: black;
+  position: relative;
+}
+#ConctactImage .ConctactImageInfo{
+position: absolute;
+left:50%;
+top:50%;
+transform: translate(-50%,-50%);
+}
+#ConctactImage .ConctactImageInfo h1,
+#ConctactImage .ConctactImageInfo h5{
+  color: white;
+  text-transform: uppercase;
+}
+#ConctactImage .ConctactImageInfo h1{
+  font-weight: bold;
+  font-size:1.5em;
+}
+#ConctactImage .ConctactImageInfo h5 span{
+  color:var(--main-color);
+}
+/*ContactUsSsection**/
+#ContactUsSsection .ContactUsSsectionInfo,#ContactUsSsection .ContactUsSectionMapsGoogle{
+  width:100%;
+}
+#ContactUsSsection .ContactUsSsectionInfo input,
+#ContactUsSsection .ContactUsSsectionInfo textarea
+{
+  width: 100%;
+  border-radius: 10px;
+  padding:0.4em 0.2em;
+  border: 1px solid black;
+}
+#ContactUsSsection .ContactUsSsectionInfo button{
+  background: var(--main-color);
+  border: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding:0.4em 0.6em;
+  font-weight: bold;
+  color:white;
+}
+#ContactUsSsection .ContactUsSectionMapsGoogle{
+  background: var(--main-color);
+  height:200px;
+}
+/*Section Get In Touch**/
+#GetTouchSection{
+  background: var(--main-color);
+  overflow: hidden;
+}
+#GetTouchSection .GetTouchSectionInfo> div > img{
+  background:var(--main-color);
+  height:30px;
+  width:30px;
+  border-radius: 50%;
+  display: inline;
+  vertical-align:middle;
+  z-index: 5;
+  position: relative;
+
+}
+#GetTouchSection .GetTouchSectionInfo > div>div{
+  display:  inline-block;
+  margin: 19px 0;
+}
+#GetTouchSection .GetTouchSectionInfo
+{
+position: relative;
+}
+#GetTouchSection .GetTouchSectionInfo:before{
+  content:"";
+  position: absolute;
+  left:15px;
+  top:0;
+    height:100%;
+    border:1px dashed black;
+  width:0px;
+  z-index: 1;
+}

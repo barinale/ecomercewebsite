@@ -20,7 +20,7 @@ input[type="checkbox"]{display: none;}
   --main-color:#f89d18;
 }
 .content{
-  width:  85%;
+  width:  90%;
   margin: auto;
 }
 /**header compentn*/
@@ -1063,6 +1063,10 @@ footer .CopyrightSocialMedia ul li img{
 
 
 @media (min-width:768px) {
+  .content{
+    width:  85%;
+    margin: auto;
+  }
 /**Header Section**/
 #HeaderInfo{
     height:4vmin;
@@ -1158,6 +1162,10 @@ flex-wrap: wrap;
 
 }
 @media (min-width:1000px) {
+  .content{
+    width:  80%;
+
+  }
   #SectionProduct .productInfo .PROMOTION{
     width: auto;
     padding:1em 1em;
