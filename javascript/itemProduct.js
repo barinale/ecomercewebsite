@@ -4,7 +4,6 @@ ItemProduct.innerHTML =`
 <style>
 .ItemProduct{
   width:250px;
-  height:430px;
   background:#EEEEEE;
   display:inline-block;
   margin-top:10px;

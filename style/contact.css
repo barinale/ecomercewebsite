@@ -3,6 +3,9 @@
   margin: 0;
   font-family: sans-serif;
 }
+a{text-decoration: none;
+color:black;}
+ul{list-style: none;}
 :root{
   --color-background:#111111;
   --main-color:#f89d18;
@@ -71,7 +74,7 @@ transform: translate(-50%,-50%);
   background: var(--main-color);
   overflow: hidden;
 }
-#GetTouchSection .GetTouchSectionInfo> div > img{
+#GetTouchSection .GetTouchSectionInfo> div>div > img{
   background:var(--main-color);
   height:30px;
   width:30px;
@@ -82,15 +85,15 @@ transform: translate(-50%,-50%);
   position: relative;
 
 }
-#GetTouchSection .GetTouchSectionInfo > div>div{
+#GetTouchSection .GetTouchSectionInfo > div>div>div{
   display:  inline-block;
   margin: 19px 0;
 }
-#GetTouchSection .GetTouchSectionInfo
+#GetTouchSection .GetTouchSectionInfoLiens
 {
 position: relative;
 }
-#GetTouchSection .GetTouchSectionInfo:before{
+#GetTouchSection .GetTouchSectionInfoLiens:before{
   content:"";
   position: absolute;
   left:15px;
@@ -99,4 +102,26 @@ position: relative;
     border:1px dashed black;
   width:0px;
   z-index: 1;
+}
+@media (min-width:768px) {
+.content{
+  width:80%;
+}
+/*ContactUsSsection**/
+#ContactUsSsection .ContactUsSsectionInfo,#ContactUsSsection .ContactUsSectionMapsGoogle{
+  width:45%;
+  display: inline-block;
+  margin-left:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
 }

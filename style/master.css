@@ -33,7 +33,6 @@ header{
   font-size: 2em;
   display: inline;
   height:40px;
-
 }
 
 #logo span{
@@ -196,11 +195,10 @@ position: relative;
   position: absolute;
   left:0%;
   top:0%;
-    height:60vmin;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  height:60vmin;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #SliderSection .sliderItem .slider1{
   background-image: url('../assests/img/backroundSlider3.png');
@@ -703,7 +701,7 @@ z-index: 1;
   color:white;
 }
 
-#FeatuedProduct .FeaturedCollection{
+#FeatuedProduct .FeatuedProduct{
   display: grid;
   grid-template-columns: 10px auto auto 10px;
   grid-template-rows: auto;
@@ -712,6 +710,7 @@ z-index: 1;
   ". SpiecieleOffer SpiecieleOffer ."
   ". CollectionWatch CollectionSunGlass .";
   grid-gap: 10px 10px;
+
 }
 #FeatuedProduct .FeaturedCollectionMen{
   margin: auto;
@@ -1141,12 +1140,14 @@ margin: auto;
 }
 /**Featured product***/
 
-#FeatuedProduct .FeaturedCollection{
+#FeatuedProduct .FeatuedProduct{
   grid-template-columns: 10px 1fr 1fr 1fr 1fr 10px;
   grid-template-areas:
   ". CollectionMen SpiecieleOffer SpiecieleOffer CollectionWomen ."
   ". CollectionMen CollectionWatch CollectionSunGlass CollectionWomen  .";
   grid-gap: 10px 10px;
+  width:100%;
+  margin: auto;
 }
 
 /**FromOurBlog**/
@@ -1166,10 +1167,13 @@ flex-wrap: wrap;
     width:  80%;
 
   }
+  #SectionProduct .productInfo{
+    width:80%;
+    margin: auto;
+  }
   #SectionProduct .productInfo .PROMOTION{
     width: auto;
     padding:1em 1em;
-
 }
 #SectionProduct .productInfo .PROMOTION .PMInf *{
   margin:0;
@@ -1212,8 +1216,12 @@ margin-right: 10px;
             ". PROMOTION PROMOTION  ProductHeighl ."
             ". PROMOTION  PROMOTION NewCollection .";
   }
+/*Fetured item*/
+#FeatuedProduct .FeaturedCollection{
+  width:80%;
+  margin: auto;
 
-
+}
 
 
 

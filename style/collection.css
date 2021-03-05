@@ -1,0 +1,218 @@
+*{
+  padding:0;
+  margin:0;
+}
+.content{
+  width:90%;
+  margin: auto;
+}
+:root{
+  --color-background:#111111;
+  --main-color:#f89d18;
+  --secound-color:#EEEEEE;
+}
+a{text-decoration: none;color:black;}
+ul{list-style: none;}
+/*SectionTitleColection*/
+#SectionTitleColection{
+  background:var(--color-background);
+}
+#SectionTitleColection .SectionTitleColectionTitle{
+  text-align: center;
+  padding:1.2em 0;
+}
+#SectionTitleColection .SectionTitleColectionTitle span{
+  color:var(--main-color);
+}
+#SectionTitleColection .SectionTitleColectionTitle h1{
+  color:white;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+#SectionTitleColection .SectionTitleColectionTitle h3{
+  font-size: 0.8em;
+  text-transform: uppercase;
+  color:white;
+}
+/*Section Tools And Product**/
+#SectionToolsAndProduct{
+  position: relative;
+}
+
+/*PaNEUS DE CONFIGIRATION**/
+#PanneuTools{
+  position: absolute;
+  background: white;
+  width: 40%;
+  box-shadow: 10px 10px 20px 1px var(--secound-color);
+}
+
+#PanneuTools .PanneuToolsTile{
+  font-size:0.6em;
+}
+#PanneuTools hr{
+  height:1px;
+  background: var(--main-color);
+  border:none;
+  width:90%;
+  margin: auto;
+}
+#PanneuTools .PanneuToolsCategory > span{
+text-transform: uppercase;
+font-weight: bold;
+}
+#PanneuTools .PanneuToolsCategory > ul > li > span{
+  background:var(--secound-color);
+display: table;
+}
+#PanneuTools .PanneuToolsCategory > ul > li > span>span,
+ #PanneuTools .PanneuToolsCategory > ul > li > span>a{
+   display: table-cell;
+ }
+ #PanneuTools .PanneuToolsCategory > ul > li > span>a{
+  width:100%;
+  padding-left: 0.6em;
+ }
+ #PanneuTools .PanneuToolsCategory > ul > li > span>span{
+   background: var(--main-color);
+  padding:0 0.2em;
+ }
+ #PanneuTools .PanneuToolsCategory > ul > li > span>span>span{
+   border-bottom:4px solid transparent;
+   border-right: 4px solid white;
+   border-top: 4px solid transparent;
+   height: 2px;
+   width:2px;
+   display: block;
+ }
+
+
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span {
+display: table;
+}
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>span,
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>a {
+display: table-cell;
+}
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>span{
+  border:1px solid var(--main-color);
+  position: relative;
+  display: inline-block;
+  width:10px;
+  height: 10px;
+  background: white;
+  z-index: 10;
+}
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>span::after,
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>span::before{
+content: "";
+position: absolute;
+left:50%;
+top:1px;
+height:8px;
+width:1px;
+background: var(--main-color);
+transform: translate(-50%,-50%);
+}
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>span::after{
+  transform: rotate(45deg);
+}
+#PanneuTools .PanneuToolsCategory > ul > li >ul> li >span>span::before{
+  transform: rotate(-45deg);
+}
+
+
+
+#PanneuTools .PanneuToolsCategory > ul > li >ul{
+  margin-left:1em;
+}
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li>span >a{
+width:100%;
+font-weight: bold;
+padding-left:5px;
+}
+
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li{
+  position: relative;
+}
+
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li>ul>span{
+  background: var(--main-color);
+  position: absolute;
+  top:10px;
+  bottom: 10px;
+  left:calc(5.5px);
+  display: inline-block;
+  width: 2px;
+}
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li>ul>li{
+  margin: 10px 3px;
+
+}
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li>ul>li>span{
+  width:8px;
+  height: 8px;
+  display: inline-block;
+  background: var(--main-color);
+}
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li>ul>li>a{
+width: 100%;
+padding-left: 5px;
+font-size: 0.8em;
+}
+
+#PanneuTools .PanneuToolsCategory > ul > li > ul > li >a{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
