@@ -12,13 +12,18 @@ ItemProduct.innerHTML =`
 
    padding:0.7em;
    height:320px;
-
+    position:relative;
 }
 .ItemProduct .ItemProductImage .Img{
-  height:320px;
+
   width:100%;
-  background:var(--main-color);
-    position:relative;
+position:relative;
+height:320px;
+}
+
+.ItemProduct .ItemProductImage .Img img{
+  width:100%;
+  height:100%;
 }
 .ItemProduct .ItemProductImage .ToolsItemProduct ul{
   list-style:none;
@@ -43,7 +48,7 @@ ItemProduct.innerHTML =`
 }
 .ItemProduct .ItemProductImage .ToolsItemProduct ul li span:nth-of-type(2){
   box-sizing: border-box;
-  background:yellow;
+  background:black;
   height:30px;
   width:150px;
   vertical-align: middle;
@@ -53,7 +58,7 @@ ItemProduct.innerHTML =`
   white-space:nowrap;
   display:none;
   animation:animationButton .5s;
-
+  color:white;
   animation-fill-mode:forwards;
 }
 .ItemProduct .ItemProductImage .ToolsItemProduct ul li span:nth-of-type(1):hover +
@@ -80,12 +85,15 @@ span:nth-of-type(2){
 .ItemProduct .ItemProductInfo{
   text-align:center;
 }
+.ItemProduct .ItemProductInfo h3{
+  font-size:0.8em;
+}
 </style>
 
 <div class="ItemProduct">
   <div class="ItemProductImage">
     <div class="Img">
-          <img src="" alt="">
+        <img src=""/>
 
         <div class="ToolsItemProduct">
           <ul>
@@ -97,14 +105,14 @@ span:nth-of-type(2){
             <span>quick view</span>
           </div>
         </div>
-      </div>
+    </div>
   </div>
   <div class="ItemProductInfo">
     <div class="starts">
 
     </div>
-    <h3>Wonderful Women's T-Shirt</h3>
-    <span>$200</span>
+    <h3><slot name="name"/></h3>
+    <span><slot name="prix"/></span>
   </div>
 </div>
 `;
@@ -114,7 +122,7 @@ export default class item extends HTMLElement{
     super();
     this.attachShadow({mode:'open'});
     this.shadowRoot.appendChild(ItemProduct.content.cloneNode(true));
-
+    this.shadowRoot.querySelector("img").src=this.getAttribute("iimage")
   }
 }
 window.customElements.define('item-show',item);

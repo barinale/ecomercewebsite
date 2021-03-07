@@ -23,23 +23,31 @@
 
           <!--PaNEUS DE CONFIGIRATION-->
 
-
+            <div id="PanneuToolsPlaces">
+              <input type="checkbox" id="PanneuToolsShowButtonS">
                   <div id="PanneuTools">
-                    <div class="content">
                       <div class="PanneuToolsTile">
                         <h1>Women</h1>
                         <h1>Fashion</h1>
+                        <label for="PanneuToolsShowButtonS">
+                        <div class="PanneuToolsShowButton">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                        </label>
                       </div>
                       <hr>
                                       <div class="PanneuToolsCategory">
                                         <span>Catagory</span>
                                           <ul>
-                                            <li><span><span><span></span> </span> <a href="#">Men's Fashion</a></span>
-                                                <ul>
-                                                    <li><span> <span><span></span></span> <a href="#">Clothes</a></span>
+                                            <li><label for="menFashionI"> <span><span><span></span> </span> <span>Men's Fashion</span></span></label>
+                                              <input type="radio" name="MenuShowFirstItem" value="ss" id="menFashionI">
+                                                <ul id="menFashionIUl">
+                                                    <li><span> <span><span></span></span> <a href="#">Clothes</a> </span>
                                                           <ul>
                                                             <span></span>
-                                                            <li><span> </span><a href="#">Jackets</a> </li>
+                                                            <li><span> </span> <a href="#">Jackets</a> </li>
                                                             <li><span> </span><a href="#">Pants</a> </li>
                                                             <li><span> </span><a href="#">Shirt</a> </li>
                                                             <li><span> </span><a href="#">Tops</a> </li>
@@ -78,8 +86,9 @@
                                                      </li>
 
                                                 </ul></li>
-                                            <li><span><span> <span></span> </span>   <a href="#">Women's Fashion </a></span>
-                                                <ul>
+                                            <li><label for="WomenFashionI"> <span><span> <span></span> </span>   <span>Women's Fashion </span></span></label>
+                                              <input type="radio" name="MenuShowFirstItem" value="" id="WomenFashionI">
+                                                <ul id="WomenFashionIUl">
                                                     <li><span> <span><span></span></span><a href="#">Clothes</a></span>
                                                           <ul>
                                                             <span> </span>
@@ -119,8 +128,9 @@
                                                      </li>
 
                                                 </ul> </li>
-                                            <li><span><span><span></span>  </span><a href="#">  Kids Fashion</a></span>
-                                                <ul>
+                                            <li><label for="KidsFashionI"> <span><span><span></span>  </span><span>  Kids Fashion</span></span></label>
+                                                <input type="radio" name="MenuShowFirstItem" value="" id="KidsFashionI">
+                                                <ul id="KidsFashionIUl">
                                                     <li><span> <span><span></span></span><a href="#">Clothes</a></span>
                                                           <ul>
                                                             <span> </span>
@@ -160,7 +170,8 @@
                                                      </li>
 
                                                 </ul> </li>
-                                            <li><span><span><span></span> </span><a href="#">  Kid's Fashion</a></span>
+                                            <!-- <li><label for=""> <span><span><span></span> </span><span>  Kid's Fashion</span></span></label>
+
                                                 <ul>
                                                     <li><a href="#"></a>
                                                           <ul>
@@ -199,9 +210,10 @@
 
                                                      </li>
 
-                                                </ul></li>
-                                            <li><span><span> <span></span> </span> <a href="#">Accessories</a></span>
-                                                <ul>
+                                                </ul></li> -->
+                                            <li><label for="AccesoireI"><span><span> <span></span> </span> <span>Accessories</span></span></label>
+                                                <input type="radio" name="MenuShowFirstItem" value="" id="AccesoireI">
+                                                <ul id="AccesoireIUl">
                                                     <li><a href="#"></a>
                                                           <ul>
                                                             <li><a href="#"></a> </li>
@@ -265,8 +277,9 @@
                                       <div class="PanneuToolsBestSell">
 
                                       </div>
-                    </div>
+
                   </div>
+                </div>
         <!------Itep Product Section----->
         <div id="SectionItemProduct">
             <div class="content">
@@ -289,20 +302,40 @@
                             <option value="Review">Review</option>
                           </select>
                         </div>
-              </div>
-              <div class="SectionItemProductViewAs">
-                <div class="ViewAssOprion">
-                    View As :
-                    <div class="">
+                        <div class="SectionItemProductViewAs">
+                          <div class="ViewAssOprion">
+                              <span>View As :</span>
+                              <div class="">
 
-                    </div>
-                    <div class="">
+                              </div>
+                              <div class="">
 
-                    </div>
-                </div>
+                              </div>
+                          </div>
+                        </div>
+
               </div>
+              <hr>
+                  <div class="SectionItemProductItems">
+                      <item-show></item-show>
+
+                  </div>
+                  <div class="ButtonPageNumber">
+                    <span> Previews</span>
+                    <ul id="PageNumber">
+
+                    </ul>
+                    <span>Next</span>
+                  </div>
+
             </div>
         </div>
         </div>
+
+
+        <script type="module" src="javascript/CollectionJs.js">
+
+
+        </script>
   </body>
 </html>

@@ -5,6 +5,33 @@
     <title>Contact</title>
     <link rel="stylesheet" href="style/contact.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+          /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+
+
+          /* Optional: Makes the sample page fill the window. */
+          html,
+          body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+        </style>
+        <script>
+  let map;
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat:33.9716, lng: -6.8498 },
+      zoom: 8,
+    });
+    const marker = new google.maps.Marker({
+      position:{lat:33.970678903597936, lng:-6.886441095785506},
+      map:map
+    });
+  }
+</script>
   </head>
   <body>
     <!--ConctactImage-->
@@ -34,7 +61,7 @@
         </div>
         <div class="ContactUsSectionMapsGoogle">
           <div class="maps">
-
+                <div id="map"></div>
           </div>
         </div>
       </div>
@@ -69,5 +96,13 @@
       </div>
       </div>
     </div>
+
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKfMId0jOAJD9wNaQqgK7c3UP8nVJnUlI&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+
   </body>
 </html>

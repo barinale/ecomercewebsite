@@ -14,8 +14,13 @@ ul{list-style: none;}
   width:90%;
   margin: auto;
 }
+#map {
+  height: 400px;
+  width: 100%;
+}
+
 body{
-  height:1500px;
+
 }
 body > div:not(:first-of-type(div)){
   margin:1em 0;
@@ -67,7 +72,7 @@ transform: translate(-50%,-50%);
 }
 #ContactUsSsection .ContactUsSectionMapsGoogle{
   background: var(--main-color);
-  height:200px;
+  height:400px;
 }
 /*Section Get In Touch**/
 #GetTouchSection{

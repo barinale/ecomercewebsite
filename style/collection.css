@@ -1,18 +1,15 @@
-*{
-  padding:0;
-  margin:0;
-}
-.content{
-  width:90%;
-  margin: auto;
-}
+*{padding:0;margin:0;}
+.content{width:90%;margin: auto;}
 :root{
   --color-background:#111111;
   --main-color:#f89d18;
   --secound-color:#EEEEEE;
 }
+body{height:3000px;}
 a{text-decoration: none;color:black;}
 ul{list-style: none;}
+input[type="checkbox"],
+input[type="radio"]{display: none;}
 /*SectionTitleColection*/
 #SectionTitleColection{
   background:var(--color-background);
@@ -37,19 +34,50 @@ ul{list-style: none;}
 /*Section Tools And Product**/
 #SectionToolsAndProduct{
   position: relative;
+  display: grid;
+  grid-template-columns: 25px auto 1em;
+  grid-template-rows: auto;
+  grid-template-areas: "PanneuToolsPlaces SectionProducts .";
 }
 
 /*PaNEUS DE CONFIGIRATION**/
+#PanneuToolsPlaces{
+  width:30px;
+  display: inline-block;
+  grid-area: PanneuToolsPlaces;
+
+}
 #PanneuTools{
   position: absolute;
   background: white;
-  width: 40%;
+  width: 60%;
   box-shadow: 10px 10px 20px 1px var(--secound-color);
+  left:-60%;
+  transition: 1s left;
+  min-height: 100vh;
+  z-index: 15;
 }
 
 #PanneuTools .PanneuToolsTile{
   font-size:0.6em;
+  position: relative;
 }
+#PanneuTools .PanneuToolsTile .PanneuToolsShowButton{
+  border:1px solid var(--main-color);
+  background:white;
+  position: absolute;
+  right:-29px;
+  top:0;
+}
+#PanneuTools .PanneuToolsTile .PanneuToolsShowButton span{
+  height:4px;
+  width:28px;
+  background: black;
+  display: block;
+  margin: 3px 0;
+  border-radius: 25%;
+}
+
 #PanneuTools hr{
   height:1px;
   background: var(--main-color);
@@ -61,23 +89,26 @@ ul{list-style: none;}
 text-transform: uppercase;
 font-weight: bold;
 }
-#PanneuTools .PanneuToolsCategory > ul > li > span{
+#PanneuTools .PanneuToolsCategory > ul > li{
+  margin: 0.5em 0;
+}
+#PanneuTools .PanneuToolsCategory > ul > li >label >span{
   background:var(--secound-color);
 display: table;
 }
-#PanneuTools .PanneuToolsCategory > ul > li > span>span,
- #PanneuTools .PanneuToolsCategory > ul > li > span>a{
+#PanneuTools .PanneuToolsCategory > ul > li > label>span>span:nth-of-type(1),
+ #PanneuTools .PanneuToolsCategory > ul > li > label>span>span:nth-of-type(2){
    display: table-cell;
  }
- #PanneuTools .PanneuToolsCategory > ul > li > span>a{
+ #PanneuTools .PanneuToolsCategory > ul > li > label>span>span:nth-of-type(2){
   width:100%;
   padding-left: 0.6em;
  }
- #PanneuTools .PanneuToolsCategory > ul > li > span>span{
+ #PanneuTools .PanneuToolsCategory > ul > li > label>span>span:nth-of-type(1){
    background: var(--main-color);
   padding:0 0.2em;
  }
- #PanneuTools .PanneuToolsCategory > ul > li > span>span>span{
+ #PanneuTools .PanneuToolsCategory > ul > li >label>span>span:nth-of-type(1)>span{
    border-bottom:4px solid transparent;
    border-right: 4px solid white;
    border-top: 4px solid transparent;
@@ -125,11 +156,12 @@ transform: translate(-50%,-50%);
 
 #PanneuTools .PanneuToolsCategory > ul > li >ul{
   margin-left:1em;
+  transition: 1s all;
 }
 #PanneuTools .PanneuToolsCategory > ul > li > ul > li>span >a{
-width:100%;
-font-weight: bold;
-padding-left:5px;
+  width:100%;
+  font-weight: bold;
+  padding-left:5px;
 }
 
 #PanneuTools .PanneuToolsCategory > ul > li > ul > li{
@@ -161,20 +193,72 @@ padding-left: 5px;
 font-size: 0.8em;
 }
 
-#PanneuTools .PanneuToolsCategory > ul > li > ul > li >a{
+input[id="PanneuToolsShowButtonS"]:checked + #PanneuTools{
+  left:0;
+}
+#menFashionIUl,#WomenFashionIUl,#KidsFashionIUl,#AccesoireIUl{
+  max-height:0px;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+}
+input[id="menFashionI"]:checked + #menFashionIUl{max-height:700px;}
+input[id="WomenFashionI"]:checked + #WomenFashionIUl{max-height:700px;}
+input[id="KidsFashionI"]:checked + #KidsFashionIUl{max-height:700px;}
+input[id="AccesoireI"]:checked + #AccesoireIUl{max-height:700px;}
 
+/*SectionItemProduct*/
+
+
+#SectionItemProduct{
+  grid-area: SectionProducts;
+}
+#SectionItemProduct .SectionItemProductTollsAffichage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#SectionItemProduct .SectionItemProductTollsAffichage .ShowProdcutOption,
+#SectionItemProduct .SectionItemProductTollsAffichage .ShowProdcutSHortBy
+{
+  white-space: nowrap;
+}
+#SectionItemProduct .SectionItemProductTollsAffichage .SectionItemProductViewAs{
+  flex-grow: 4;
+  margin-top:0.5em;
+}
+#SectionItemProduct .SectionItemProductTollsAffichage .SectionItemProductViewAs .ViewAssOprion {
+display: flex;
+justify-content: center;
+}
+#SectionItemProduct .SectionItemProductTollsAffichage .SectionItemProductViewAs .ViewAssOprion > div{
+  height:20px;
+  width:20px;
+  background: black;
+  margin-left: 10px;
+  display: inline-block;
+}
+#SectionItemProduct hr{
+  border: none;
+  height:2px;
+  background: #EEEEEE;
 }
 
+          /*Section Products**/
 
 
-
-
-
-
-
-
-
-
+          /*Button fomr section product--*/
+  #SectionItemProduct .ButtonPageNumber{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em auto;
+  }
+  #SectionItemProduct .ButtonPageNumber ul li{
+    display: inline;
+    padding:0.2em 0.4em;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 0 0.3em;
+  }
 
 
 
