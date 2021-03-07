@@ -122,7 +122,7 @@ export default class item extends HTMLElement{
     super();
     this.attachShadow({mode:'open'});
     this.shadowRoot.appendChild(ItemProduct.content.cloneNode(true));
-    this.shadowRoot.querySelector("img").src=this.getAttribute("iimage")
+    this.shadowRoot.querySelector("img").src=this.getAttribute("image")
   }
 }
 window.customElements.define('item-show',item);
