@@ -1,5 +1,6 @@
 /*Web Compenent**/
 import item from './itemProduct.js'
+
 /*Main Slider*/
 import SliderMain from './MainSlider.js'
 const SliderParent = document.querySelector("#SliderSection .sliderItem")
@@ -31,3 +32,16 @@ NewProduct.querySelector('ul').addEventListener("click",(e)=>{
   }
 
 })
+/*Display item on New Product Section**/
+    /*import JS File*/
+import * as ProductsJs from './JsonObject/JsonObject.js'
+
+const NewProductSection = document.querySelector("#SectionProduct .NewProduct .NewProductItem")
+const ProductsJsObject = ProductsJs.default;
+for(let i= 0;i<8;i++){
+  NewProductSection.innerHTML += `<item-show type="${ProductsJsObject[i].Gendre}"
+    image="${ProductsJsObject[i].Info.imgUrl}" NumberId="${ProductsJsObject[i].id}">
+    <h3 slot="name">${ProductsJsObject[i].nameProduct} </h3>
+    <span slot="prix">${ProductsJsObject[i].Price} $</span>
+    </item-show>`;
+}
