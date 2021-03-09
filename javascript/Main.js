@@ -8,8 +8,21 @@ const SliderButtonLeft = document.querySelector("#ArrowSection .ArrowLef ")
 const SliderButtonRight = document.querySelector("#ArrowSection .ArrowRight ")
 const Slider = new SliderMain(SliderParent,SliderButtonLeft,SliderButtonRight)
 /*Fin Main Slider*/
-
-
+/*Make Slider go ByHimSelf*/
+  /*And If A event Happing in Buutton wait for 9secound beofre come back to Work ByHimSelf*/
+let Count = 0;
+Slider.LeftMove();
+setInterval(()=>{
+  if(Slider.drop){
+    Count++;
+    if(Count>=3){
+      Count=0;
+      Slider.drop = false;
+    }
+  }
+  if(!Slider.drop)
+    Slider.LeftMove();
+},3000)
 
 /*for displat item depeing on menu Select**/
 const NewProduct = document.querySelector('.NewProduct');

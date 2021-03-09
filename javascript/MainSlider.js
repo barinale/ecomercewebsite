@@ -5,8 +5,9 @@ export default class SliderMain{
   this.RightButton = RightButton;
   this.makeEventForButton();
   this.MkDisNone();
-this.parent.children[0].style.display="block";
-this.position =0;
+   this.parent.children[0].style.display="block";
+  this.position =0;
+  this.drop = false;
   }
   MkDisNone(){
     for(let i =0;i<this.parent.children.length;i++){
@@ -17,24 +18,34 @@ this.position =0;
   }
   makeEventForButton(){
     this.LeftButton.addEventListener("click",(e)=>{
-      if(this.position==0){
-        this.showSlider(this.parent.children.length-1);
-        this.position=this.parent.children.length-1;
-      }
-      else{
-        this.position--;
-          this.showSlider(this.position);
-      }
+      this.drop=true;
+      this.LeftMove();
+
     })
     this.RightButton.addEventListener("click",(e)=>{
-      if(this.position == this.parent.children.length-1 ){
-        this.position =0;
-        this.showSlider(this.position);
-      }else{
-        this.position++;
-        this.showSlider(this.position);
-      }
+      this.drop=true;
+      this.RightMove();
+
     })
+  }
+  LeftMove(){
+    if(this.position==0){
+      this.showSlider(this.parent.children.length-1);
+      this.position=this.parent.children.length-1;
+    }
+    else{
+      this.position--;
+        this.showSlider(this.position);
+    }
+  }
+  RightMove(){
+    if(this.position == this.parent.children.length-1 ){
+      this.position =0;
+      this.showSlider(this.position);
+    }else{
+      this.position++;
+      this.showSlider(this.position);
+    }
   }
   showSlider(Position){
     this.MkDisNone();
