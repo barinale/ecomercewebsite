@@ -11,7 +11,7 @@ const Slider = new SliderMain(SliderParent,SliderButtonLeft,SliderButtonRight)
 /*Make Slider go ByHimSelf*/
   /*And If A event Happing in Buutton wait for 9secound beofre come back to Work ByHimSelf*/
 let Count = 0;
-Slider.LeftMove();
+
 setInterval(()=>{
   if(Slider.drop){
     Count++;
