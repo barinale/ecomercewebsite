@@ -31,7 +31,7 @@ NewProduct.querySelector('ul').addEventListener("click",(e)=>{
   e.preventDefault();
 
   if(e.target.tagName == 'A'){
-
+    console.log(e.target)
     for(let i =0;i<ProductShow.children.length;i++)
       {
         if(ProductShow.children[i].getAttribute('type')!=e.target.text && e.target.text !='All' ){
@@ -39,6 +39,7 @@ NewProduct.querySelector('ul').addEventListener("click",(e)=>{
         }
         else {
           ProductShow.children[i].style.display='inline-block';
+
         }
       }
 
@@ -51,10 +52,35 @@ import * as ProductsJs from './JsonObject/JsonObject.js'
 
 const NewProductSection = document.querySelector("#SectionProduct .NewProduct .NewProductItem")
 const ProductsJsObject = ProductsJs.default;
-for(let i= 0;i<8;i++){
-  NewProductSection.innerHTML += `<item-show type="${ProductsJsObject[i].Gendre}"
-    image="${ProductsJsObject[i].Info.imgUrl}" NumberId="${ProductsJsObject[i].id}">
-    <h3 slot="name">${ProductsJsObject[i].nameProduct} </h3>
-    <span slot="prix">${ProductsJsObject[i].Price} $</span>
+      /*For GETTING nUMBER Betwwin 0 and length of products*/
+            function getRandomInt(min, max) {
+                                              min = Math.ceil(min);
+                                              max = Math.floor(max);
+                                              return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+                                            }
+
+
+for(let i= 0;i<10;i++){
+      let NumberRandom=  getRandomInt(0,ProductsJsObject.length);
+
+  NewProductSection.innerHTML += `<item-show type="${ProductsJsObject[NumberRandom].Gendre}"
+    image="${ProductsJsObject[NumberRandom].Info.imgUrl}" NumberId="${ProductsJsObject[NumberRandom].id}">
+    <h3 slot="name">${ProductsJsObject[NumberRandom].nameProduct} </h3>
+    <span slot="prix">${ProductsJsObject[NumberRandom].Price} $</span>
     </item-show>`;
+
+
+}
+
+
+/*Working with localStorage to save when should user go after click in menu**/
+let arrButtonsForNav = ["#CollectionMenButton","#CollectionWomenButton","#CollectionKidsButton","#CollectionAccessoiresButton"]
+let arrButtonValues = ["Men","Women","Kids","accesoires"]
+for(let i =0;i<arrButtonsForNav.length;i++){
+
+  document.querySelector(arrButtonsForNav[i]).addEventListener("click",(e)=>{
+    e.preventDefault();
+    window.location.href="Collection.html?type="+arrButtonValues[i];
+  })
+
 }

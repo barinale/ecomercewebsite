@@ -134,7 +134,7 @@ span:nth-of-type(2){
 
     </div>
     <h3><slot name="name"/></h3>
-    <span><slot name="prix"/></span>
+    <span><slot name="prix"/>  </span>
   </div>
   <div id="ShowPanelQk">
    </div>
