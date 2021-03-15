@@ -73,7 +73,7 @@ for(let i= 0;i<10;i++){
 }
 
 
-/*Working with localStorage to save when should user go after click in menu**/
+/*tgenerate page of products depending on user click **/
 let arrButtonsForNav = ["#CollectionMenButton","#CollectionWomenButton","#CollectionKidsButton","#CollectionAccessoiresButton"]
 let arrButtonValues = ["Men","Women","Kids","accesoires"]
 for(let i =0;i<arrButtonsForNav.length;i++){

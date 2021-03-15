@@ -1,0 +1,301 @@
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+a{text-decoration: none;color:black;}
+ul{list-style:  none;}
+ul li{display: inline;}
+img{width: 100%;height:100%;}
+body {
+  height:2000px;
+}
+:root{
+  --color-background:#111111;
+  --main-color:#f89d18;
+}
+.content{
+  width:90%;
+  margin: auto;
+}
+input[type="radio"]{display: none;}
+/*SingleProdt Header*/
+#SingleProductMain{
+  background: black;
+}
+#SingleProductMain .SingleProductTtile{
+  text-align: center;
+  padding:2em 0.1em;
+}
+
+#SingleProductMain .SingleProductTtile h5,
+#SingleProductMain .SingleProductTtile h5 span{
+  color:var(--main-color);
+}
+#SingleProductMain .SingleProductTtile h1,
+#SingleProductMain .SingleProductTtile h5:nth-of-type(2)
+{
+  color:white;
+}
+#SingleProductMain .SingleProductTtile h1{
+  text-transform:uppercase;
+  font-weight: bold;
+}
+/**Section Product Single Every Info**/
+        /*div for photoMain and Small Images**/
+#SingleProductInfo .SingleProductInfoImageAndSmallPhOTO .IMageMain{
+  width:100%;
+  height:350px;
+  margin: auto;
+  background: #EEEEEE;
+  padding:0.5em;
+}
+#SingleProductInfo .SingleProductInfoImageAndSmallPhOTO .IMageMain img{
+  width:100%;
+  margin: auto;
+  background: black;
+  height: 100%;
+  display: block;
+}
+
+#SingleProductInfo .SingleProductInfoImageAndSmallPhOTO .ImgsSmall ul{
+margin: auto;
+display: flex;
+justify-content: space-between;
+}
+#SingleProductInfo .SingleProductInfoImageAndSmallPhOTO .ImgsSmall ul li{
+  height:70px;
+  width:70px;
+  background: var(--main-color);
+  display: inline-block;
+  border: 1px solid black;
+}
+      /*div info for more deatil*/
+#SingleProductInfo .SingleProductInfoInfoProduct .TitleProductName h5{
+  font-weight: bold;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct hr{
+  border:none;
+  height:1px;
+  width:100%;
+  background: var(--main-color);
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct >p{
+  font-weight: lighter;
+  opacity: 0.8;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject span:first-child{
+  color:var(--main-color);
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject >span{
+  display: block;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject ul{
+  display: flex;
+
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject ul li:not(:first-child){
+margin-left: 0.6em;
+display: block;
+height:20px;
+width:20px;
+background: red;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject ul li:nth-of-type(2){
+  background: var(--main-color);
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject ul li:nth-of-type(3){
+  background: blue;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto .AddToCart{
+  display: table;
+  cursor: pointer;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto .AddToCart span{
+  display: table-cell;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto div svg{
+  width:100%;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto div span:nth-of-type(1){
+  background: black;
+  height:30px;
+  width: 30px;
+  padding:0.3em;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto div:not(:first-child) span{
+  height:30px;
+  width: 30px;
+  display: inline-block;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto .AddToCart span:nth-of-type(2){
+  background: var(--main-color);
+  color:white;
+  text-transform: uppercase;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .EventToAddto{
+  display: flex;
+  justify-content: space-between;
+  width:70%;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .ShareProduct ul li:first-child{
+  font-weight: bold;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .ShareProduct ul li:not(:first-child){
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
+  padding:0.4em;
+}
+      /*For promotion */
+#SingleProductInfo  .SingleProductInfoPromotionSection{
+  margin:auto;
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection div{
+  min-height: 200px;
+  width:150px;
+  background: var(--main-color);
+  display: inline-block;
+}
+/*Section Reveiw and Desctipon*/
+#DesAndRev .DesAndRevClass{
+  box-shadow: 1px 10px 10px 5px #eeeeee;
+}
+#DesAndRev .DesAndRevClass >ul{
+  width:100%;
+  background: black;
+}
+#DesAndRev .DesAndRevClass >ul li{
+  color:white;
+  padding:0.5em 1em;
+  display: inline-block;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Description{
+  padding:1em 0.6em;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Description p{
+  opacity:0.8;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Description ul li{
+  display: block;
+  margin-left:0.6em;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Description ul li span{
+  display: inline-block;
+  height:7px;
+  width: 7px;
+  border-radius: 50%;
+  background: black;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview{
+
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview > div{
+  margin: 0 0.6em;
+  display: inline-block;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview .InfoReview{
+  width:60%;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview .InfoReview p{
+  font-weight: lighter;
+  font-size: 0.8em;
+}
+
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview .Img{
+  background: black;
+  height:50px;
+  width:50px;
+  border-radius: 50%;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview h3,
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview button
+{
+  text-transform: uppercase;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview form textarea,
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview form input{
+padding: 0.6em 0.6em;
+  width:100%;
+  margin: 0.5em 0;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews,
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Description
+{
+  display: none;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews {
+  padding: 2em 0;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview form button{
+background: var(--main-color);
+border: none;
+padding:1em;
+font-weight: bold;
+}
+#DesAndRev .DesAndRevClass .infoRevAndDesc input[id="descriptionFiled"]:checked + .Description{
+  display: block;
+}
+
+#DesAndRev .DesAndRevClass .infoRevAndDesc input[id="ReviewFiled"]:checked + .Reviews{
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/

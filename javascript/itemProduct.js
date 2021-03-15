@@ -104,12 +104,16 @@ span:nth-of-type(2){
   background:red;
   z-index:99;
 }
+#eventForSungleProduct{
+  cursor: pointer;
+
+}
 </style>
 
 <div class="ItemProduct">
   <div class="ItemProductImage">
     <div class="Img">
-        <img src=""/>
+        <img src="" id="eventForSungleProduct"/>
 
         <div class="ToolsItemProduct">
           <ul>
@@ -129,12 +133,12 @@ span:nth-of-type(2){
         </div>
     </div>
   </div>
-  <div class="ItemProductInfo">
+  <div class="ItemProductInfo" >
     <div class="starts">
 
     </div>
-    <h3><slot name="name"/></h3>
-    <span><slot name="prix"/>  </span>
+   <h3 id="eventForSungleProduct" ><slot name="name"/></h3>
+    <span id="eventForSungleProduct"><slot name="prix"/>  </span>
   </div>
   <div id="ShowPanelQk">
    </div>
@@ -146,21 +150,37 @@ export default class item extends HTMLElement{
     super();
     this.attachShadow({mode:'open'});
     this.shadowRoot.appendChild(ItemProduct.content.cloneNode(true));
-    this.shadowRoot.querySelector("img").src=this.getAttribute("image")
-  }
-  connectedCallback(){
-    this.shadowRoot.querySelector("#AddToItem").addEventListener("click",()=>this.AddToItem())
-  }
-  disconnectedCallback(){
+    this.shadowRoot.querySelector("img").src=this.getAttribute("image");
+
 
   }
+  connectedCallback(){
+    this.shadowRoot.querySelector("#AddToItem").addEventListener("click",()=>this.AddToItem());
+  this.shadowRoot.querySelectorAll("#eventForSungleProduct").forEach((item, i) => {
+    item.addEventListener("click",()=>this.changeLocation())
+  });
+  ;
+
+  }
+  disconnectedCallback(){
+  this.shadowRoot.querySelector("#AddToItem").removeEventListener("click",()=>this.AddToItem())
+  }
+  /*Event to take user to sungle product */
+ changeLocation(){
+   window.location.href="SingleProduct.html?id="+this.getAttribute("NumberId");
+
+ }
+
+
+  /*For Adding Item to Panel Add*/
   AddToItem(){
     document.querySelector("#ForPanelItem ul").innerHTML+=`
     <li>
+
       <span class="image"><img src="${ProductsJs.default[this.getAttribute("NumberId")-1].Info.imgUrl}"/></span>
       <span class="NameOfProduct">${ProductsJs.default[this.getAttribute("NumberId")-1].nameProduct}</span>
       <span class="NumberOfProduct" >1</span>
-      <span id="totolPrix">${ProductsJs.default[this.getAttribute("NumberId")-1].Price}</span>
+      <span id="totolPrix">${ProductsJs.default[this.getAttribute("NumberId")-1].Price}$</span>
     </li>
     `;
     console.log(document.body.querySelector(".NumberOfProduct").textContent);
