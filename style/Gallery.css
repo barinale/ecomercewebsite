@@ -1,0 +1,14 @@
+body{
+  background: yellow;
+}
+.item{
+  margin:2em;
+  background: red;
+  display: inline-block;
+  height:200px;
+  width: 150px;
+  transition: 1s all;
+}
+.item:hover{
+  transform: scale(1.1);
+}

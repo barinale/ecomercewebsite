@@ -60,7 +60,7 @@ const ProductsJsObject = ProductsJs.default;
                                             }
 
 
-for(let i= 0;i<10;i++){
+for(let i= 0;i<12;i++){
       let NumberRandom=  getRandomInt(0,ProductsJsObject.length);
 
   NewProductSection.innerHTML += `<item-show type="${ProductsJsObject[NumberRandom].Gendre}"

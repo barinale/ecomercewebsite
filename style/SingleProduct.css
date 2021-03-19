@@ -44,6 +44,9 @@ input[type="radio"]{display: none;}
 }
 /**Section Product Single Every Info**/
         /*div for photoMain and Small Images**/
+#SingleProductInfo {
+  margin:1em 0;
+}
 #SingleProductInfo .SingleProductInfoImageAndSmallPhOTO .IMageMain{
   width:100%;
   height:350px;
@@ -72,6 +75,12 @@ justify-content: space-between;
   border: 1px solid black;
 }
       /*div info for more deatil*/
+
+#SingleProductInfo .SingleProductInfoInfoProduct >*,
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct >*
+    {
+        margin:1em 0;
+    }
 #SingleProductInfo .SingleProductInfoInfoProduct .TitleProductName h5{
   font-weight: bold;
 }
@@ -81,14 +90,14 @@ justify-content: space-between;
   width:100%;
   background: var(--main-color);
 }
-#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct >p{
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct > p{
   font-weight: lighter;
   opacity: 0.8;
 }
 #SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject span:first-child{
   color:var(--main-color);
 }
-#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject >span{
+#SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject > span{
   display: block;
 }
 #SingleProductInfo .SingleProductInfoInfoProduct .MoreInfoAboutProduct .InfoFromObject ul{
@@ -149,14 +158,54 @@ background: red;
 }
       /*For promotion */
 #SingleProductInfo  .SingleProductInfoPromotionSection{
-  margin:auto;
+  display: flex;
+  justify-content: space-around;
 }
-#SingleProductInfo  .SingleProductInfoPromotionSection div{
+#SingleProductInfo  .SingleProductInfoPromotionSection > div{
   min-height: 200px;
   width:150px;
   background: var(--main-color);
   display: inline-block;
 }
+#SingleProductInfo  .SingleProductInfoPromotionSection .ColletionWomen{
+    background: url("../assests/img/weading.jpg");
+
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection .ColletionMen{
+  background: url("../assests/img/collectionMenPromotion.jpg")
+}
+
+#SingleProductInfo  .SingleProductInfoPromotionSection .ColletionWomen,
+#SingleProductInfo  .SingleProductInfoPromotionSection .ColletionMen{
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection div > div{
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection div > div h1:nth-of-type(1){
+  color:var(--main-color);
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection div > div h1:nth-of-type(2){
+  text-transform: uppercase;
+  color:white;
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection div > div h5{
+  background: var(--main-color);
+  display: inline-block;
+  padding:0.3em 0.2em;
+  text-transform: uppercase;
+}
+#SingleProductInfo  .SingleProductInfoPromotionSection div > div h5 span{
+  color:white;
+}
+
 /*Section Reveiw and Desctipon*/
 #DesAndRev .DesAndRevClass{
   box-shadow: 1px 10px 10px 5px #eeeeee;
@@ -169,6 +218,7 @@ background: red;
   color:white;
   padding:0.5em 1em;
   display: inline-block;
+
 }
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Description{
   padding:1em 0.6em;
@@ -188,7 +238,7 @@ background: red;
   background: black;
 }
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview{
-
+padding:0 1em;
 }
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .OldReview .BoxReview > div{
   margin: 0 0.6em;
@@ -207,6 +257,7 @@ background: red;
   height:50px;
   width:50px;
   border-radius: 50%;
+  overflow: hidden;
 }
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview h3,
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview button
@@ -225,7 +276,7 @@ padding: 0.6em 0.6em;
   display: none;
 }
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews {
-  padding: 2em 0;
+  padding: 2em 0.9em;
 }
 #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview form button{
 background: var(--main-color);
@@ -240,6 +291,46 @@ font-weight: bold;
 #DesAndRev .DesAndRevClass .infoRevAndDesc input[id="ReviewFiled"]:checked + .Reviews{
   display: block;
 }
+
+@media (min-width:768px) {
+#SingleProductInfo .content{
+  display: flex;
+  flex-wrap: wrap;
+}
+#SingleProductInfo .SingleProductInfoInfoProduct{
+  width:45%;
+}
+#SingleProductInfo .SingleProductInfoPromotionSection{
+  flex-grow:2;
+}
+
+@media (min-width:1000px) {
+  #SingleProductInfo .content{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  #SingleProductInfo .SingleProductInfoInfoProduct{
+    margin:0 1em;  }
+  #SingleProductInfo .SingleProductInfoPromotionSection{
+    flex-direction:column;
+  }
+    #SingleProductInfo .SingleProductInfoPromotionSection>div{
+margin: auto;
+    }
+#DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview form button{
+  display: block;
+
+
+    }
+    #DesAndRev .DesAndRevClass .infoRevAndDesc .Reviews .PostAReview form div{
+      display: inline-block;
+      width: 45%;
+      vertical-align: middle;
+    }
+
+}
+
 
 
 

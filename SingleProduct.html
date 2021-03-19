@@ -11,9 +11,9 @@
     <section id="SingleProductMain">
       <div class="content">
         <div class="SingleProductTtile">
-          <h5>Women's</h5>
+          <h5 id="nameOfPage">Women's</h5>
           <h1>Single Product</h1>
-          <h5>Home/Women/Clothes/Tshirt/ <span>Wonderful Womens T-Shirt</span></h5>
+          <h5>Home/<span id="nameOfPage">Women</span>/Clothes/Tshirt/ <span id="nameOfProduct">Wonderful Womens T-Shirt</span></h5>
         </div>
       </div>
     </section>
@@ -104,9 +104,19 @@
               <div class="SingleProductInfoPromotionSection">
                 <div class="ColletionWomen">
 
+                  <div class="CollectomTitle">
+                    <h1>Weading</h1>
+                    <h1>Collection</h1>
+                    <h5><span> UpTo</span> 30% <span> Off</span></h5>
+                  </div>
                 </div>
                 <div class="ColletionMen">
 
+                  <div class="CollectomTitle">
+                    <h1>Class </h1>
+                    <h1>Collection</h1>
+                    <h5>30% Off</h5>
+                  </div>
                 </div>
               </div>
         </div>
@@ -116,10 +126,10 @@
         <div class="content">
           <div class="DesAndRevClass">
             <ul>
-              <label for="descriptionFiled">
+              <label for="descriptionFiled" id="labelDes">
               <li>Description</li>
             </label>
-            <label for="ReviewFiled">
+            <label for="ReviewFiled" id="labelRev">
               <li>Reviews</li>
               </label>
             </ul>
@@ -141,7 +151,7 @@
                   <div class="OldReview">
                       <div class="BoxReview">
                         <div class="Img">
-
+                          <img src="assests\img\men.jpg" alt="">
                         </div>
                         <div class="InfoReview">
                           <h5>john smith</h5>
@@ -155,9 +165,15 @@
                         <span>Your Rating</span>
                     </div>
                     <form class="" action="index.html" method="post">
+                      <div class="">
+
                         <textarea name="name"  placeholder="Review"></textarea>
+                      </div>
+                        <div class="">
+
                         <input type="text" name="" value="" placeholder="Name *">
                         <input type="text" name="" value="" placeholder="Email *">
+                      </div>
                         <button type="submit" name="button">Submit</button>
                     </form>
 

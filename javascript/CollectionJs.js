@@ -13,6 +13,7 @@ class DisplayItem{
     this.ParentItem = ParentItem;
     this.ParentButton = ParentButton;
     this.Products = Products;
+
     this.pageName =this.GetUrlQuery();
     this.Item = this.getItem();
     this.eventToTitleOfPage();
@@ -21,6 +22,8 @@ class DisplayItem{
     this.eventToNumberofPage();
     this.DisplayItemOnPaGE(this.NumberOfPrudct.value,0);
   }
+  /*get how Product should show*/
+
   /*Get only product deping on page name*/
   getItem(){
     let arrItem=[];
@@ -79,7 +82,7 @@ class DisplayItem{
   DisplayItemOnPaGE(Number,lastProductIndex){
      this.ParentItem.innerHTML =``;
      for(let i =0;i<Number && i+lastProductIndex<this.Item.length;i++){
-       this.ParentItem.innerHTML +=`<item-show image="${this.Item[i+lastProductIndex].Info.imgUrl}">
+       this.ParentItem.innerHTML +=`<item-show image="${this.Item[i+lastProductIndex].Info.imgUrl}" NumberId="${this.Item[i+lastProductIndex].id}">
        <h3 slot="name">${this.Item[i+lastProductIndex].nameProduct}</h3>
        <span slot="prix">${this.Item[i+lastProductIndex].Price}</span>
        </item-show>`;
