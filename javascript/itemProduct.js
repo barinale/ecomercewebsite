@@ -9,16 +9,15 @@ margin:0;
 box-sizing: border-box;
 }
 svg {
-width:100%;
-height:40px;
+width:25px;
+height:25px;
 padding:0.5em;
-
-
 }
 svg >*{
 fill:white;
 stroke:white;
 }
+
 ul{
   list-style:none;
 }
@@ -27,7 +26,7 @@ ul li{
 }
 ul li > span{
   display:table;
-  height:40px;
+  height:20px;
 }
 ul li > span span{
   display: table-cell;
@@ -35,22 +34,23 @@ ul li > span span{
 }
 ul li > span span:nth-of-type(1){
   background:black;
-  height:40px;
-  width:40px;
+  height:20px;
+  width:20px;
+
 }
 ul li > span span:nth-of-type(1):hover + span,
 ul li > span span:nth-of-type(2):hover{
   display: table-cell;
   font-size:1em;
   max-width:150px;
-  width:120px;
+  width:70px;
 
 }
 ul li > span span:nth-of-type(2){
   vertical-align: middle;
   max-width:0px;
-  transition:0.5s all;
-  height:40px;
+  transition:0.2s all;
+  height:20px;
   overflow:hidden;
   font-size:0em;
   background:var(--main-color);
@@ -62,17 +62,21 @@ ul li > span span:nth-of-type(2){
   background:#eeeeee;
   padding:1em;
   position:relative;
-  width:210px;
-  min-height:350px;
+  width:150px;
+  min-height:150px;
   margin:1em 0;
+  font-size:12px;
 }
+
 #ProductImage img{
-  height:250px;
-  width:180px;
+  height:150px;
+  width:120px;
   background:black;
+  margin:auto;
+  display:block;
 }
 #ProductInfo > *{
-  margin:0.5em 0;
+  margin:.1em 0;
 }
 
 
@@ -80,16 +84,16 @@ ul li > span span:nth-of-type(2){
   display:flex;
 }
 .ViewFull #ProductInfo>*:not(:first-child){
-  margin:1em 0;
+  margin:0.1em 0;
 }
 .ViewFull #ProductInfo{
-  padding:0 1em;
+  padding-left:.2em;
 }
 
 .ViewCard #ProductInfo #eventCart{
   position:absolute;
-  top:20%;
-  left:1em;
+  top:10%;
+  left:15px;
 }
 
 .ViewCard #ProductInfo #eventCart >span{
@@ -112,6 +116,52 @@ h1{
 }#eventForSungleProduct{
   cursor: pointer;
 }
+@media (min-width:768px) {
+  #WebProduct{
+    font-size:16px;
+    width:170px;
+    min-height:270px;
+  }
+  #ProductImage img{
+    width:140px;
+    height:170px;
+  }
+  ul li > span span:nth-of-type(1):hover + span,
+  ul li > span span:nth-of-type(2):hover{
+    max-width:150px;
+    width:100px;
+  }
+  svg {
+  width:30px;
+  height:30px;
+  padding:0.5em;
+  }
+  .ViewFull #ProductInfo>*:not(:first-child){
+    margin:0.7em 0;
+  }
+.ViewCard #ProductInfo h1{
+    font-size:0.6em;
+  }
+  .ViewCard #ProductInfo > *{
+    margin:0.5em 0;
+  }
+}
+@media (min-width:1000px) {
+  #WebProduct{
+    font-size:18px;
+    width:250px;
+    min-height:270px;
+  }
+  #ProductImage img{
+    width:220px;
+    height:250px;
+  }
+  .ViewFull #ProductInfo>*:not(:first-child){
+    margin:0.9em 0;
+  }
+}
+
+
 </style>
 <div id="WebProduct">
   <div id="ProductImageInfo" class="ViewCard">
@@ -122,7 +172,7 @@ h1{
       <h1 id="eventForSungleProduct"><slot name="name"/></h1>
       <h3 id="eventForSungleProduct" ><slot name="prix"/></h3>
       <hr>
-      <p>Lorem ipsum dolor sit nim on ula commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit nim on ula commodo consequat. adent, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       <div id="eventCart">
       <ul>
       <li><span><span>
@@ -300,7 +350,7 @@ export default class item extends HTMLElement{
     this.attachShadow({mode:'open'});
     this.shadowRoot.appendChild(ItemProduct.content.cloneNode(true));
     this.shadowRoot.querySelector("img").src=this.getAttribute("image");
-    this.displayitemFullOrCard("ViewFull");
+    this.displayitemFullOrCard(this.getAttribute("ViewOption"));
 
   }
   //for display on user option full or Card in Collection Page
@@ -313,10 +363,12 @@ export default class item extends HTMLElement{
         console.log(this.shadowRoot.querySelector("#ProductImageInfo").className="ViewFull")
         break;
         case "ViewCard":
-        this.shadowRoot.querySelector()
+
         console.log(this.shadowRoot.querySelector("#ProductImageInfo").className="ViewCard")
 
         break;
+        default:
+
     }
 
   }

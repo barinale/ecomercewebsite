@@ -254,7 +254,9 @@ position: absolute;
 height: auto;
 width: 80%;
 }
-
+.active{
+  background: black;
+}
 #SectionItemProduct .SectionItemProductTollsAffichage .ViewCardItem li{
 display: inline-block;
 
@@ -281,7 +283,11 @@ margin: 1px;
   margin: 2px auto;
 }
           /*Section Products**/
-
+#SectionItemProduct .SectionItemProductItems{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
           /*Button fomr section product--*/
   #SectionItemProduct .ButtonPageNumber{
@@ -299,7 +305,7 @@ margin: 1px;
 
   @media (min-width:768px) {
     #SectionToolsAndProduct{
-      grid-template-columns: 40px auto 1em;
+      grid-template-columns: 45px auto 1em;
       grid-template-rows: auto;
       grid-template-areas: "PanneuToolsPlaces SectionProducts .";
     }

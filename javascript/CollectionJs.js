@@ -5,15 +5,29 @@ const NumberOfP = document.querySelector("#ShowProductNumber");
 const ShortByP = document.querySelector("#ShortBy");
 const ParentItemForProductMenu = document.querySelector("#SectionItemProduct .SectionItemProductItems");
 const ParentButton = document.querySelector("#PageNumber");
+const ViewOption = "ViewCard"
+const ViewOptionCard = document.querySelector("#ViewCard")
+const ViewOptionFull = document.querySelector("#ViewFull")
+
+function eventForShowViewOption(item1,item2){
+  item1.classList.add("active");
+  item1.style.background="black";
+  item2.classList.remove("active");
+  item2.style.background="#eeeeee";
+}
     /*class for display Product**/
-class DisplayItem{
-  constructor(NumberOfPrudct,ShortBy,ParentItem,Products,ParentButton){
+ class DisplayItem{
+  constructor(NumberOfPrudct,ShortBy,ParentItem,Products,ParentButton,ButtonViewFull,ButtonViewCard){
     this.NumberOfPrudct = NumberOfPrudct;
     this.ShortBy =ShortBy;
     this.ParentItem = ParentItem;
     this.ParentButton = ParentButton;
     this.Products = Products;
-
+    this.ButtonViewFull = ButtonViewFull;
+    this.ButtonViewCard=ButtonViewCard;
+    this.ViewOption;
+    this.EventForOptionView();
+    this.eventForShowViewOption(ButtonViewCard,ButtonViewFull);
     this.pageName =this.GetUrlQuery();
     this.Item = this.getItem();
     this.eventToTitleOfPage();
@@ -22,7 +36,6 @@ class DisplayItem{
     this.eventToNumberofPage();
     this.DisplayItemOnPaGE(this.NumberOfPrudct.value,0);
   }
-  /*get how Product should show*/
 
   /*Get only product deping on page name*/
   getItem(){
@@ -78,11 +91,34 @@ class DisplayItem{
           })
         }
     }
+    /*AddEVENTlSITENNET TO VIEW oOption*/
+    EventForOptionView(){
+      ViewOptionCard.addEventListener("click",()=>{
+        if(!ViewOptionCard.classList.contains("active"))
+              eventForShowViewOption(ViewOptionCard,ViewOptionFull);
+              this.ViewOption = "ViewCard";
+              this.DisplayItemOnPaGE(this.NumberOfPrudct.value,0);
+
+      })
+      ViewOptionFull.addEventListener("click",()=>{
+        if(!ViewOptionFull.classList.contains("active"))
+          eventForShowViewOption(ViewOptionFull,ViewOptionCard);
+              this.ViewOption = "ViewFull";
+              this.DisplayItemOnPaGE(this.NumberOfPrudct.value,0);
+
+      })
+    }
+    eventForShowViewOption(item1,item2){
+      item1.classList.add("active");
+      item1.style.background="black";
+      item2.classList.remove("active");
+      item2.style.background="#eeeeee";
+    }
   /*Display ITEM on Page*/
   DisplayItemOnPaGE(Number,lastProductIndex){
      this.ParentItem.innerHTML =``;
      for(let i =0;i<Number && i+lastProductIndex<this.Item.length;i++){
-       this.ParentItem.innerHTML +=`<item-show image="${this.Item[i+lastProductIndex].Info.imgUrl}" NumberId="${this.Item[i+lastProductIndex].id}">
+       this.ParentItem.innerHTML +=`<item-show ViewOption="${this.ViewOption}"image="${this.Item[i+lastProductIndex].Info.imgUrl}" NumberId="${this.Item[i+lastProductIndex].id}">
        <h3 slot="name">${this.Item[i+lastProductIndex].nameProduct}</h3>
        <span slot="prix">${this.Item[i+lastProductIndex].Price}</span>
        </item-show>`;
@@ -93,4 +129,4 @@ class DisplayItem{
     /*FIN cLASS */
 import * as texst from './JsonObject/JsonObject.js'
 
-const DisplayItemC = new DisplayItem(NumberOfP,ShortByP,ParentItemForProductMenu,texst.default,ParentButton);
+const DisplayItemC = new DisplayItem(NumberOfP,ShortByP,ParentItemForProductMenu,texst.default,ParentButton,ViewOptionFull,ViewOptionCard);
