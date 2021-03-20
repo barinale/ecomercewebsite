@@ -159,6 +159,11 @@ h1{
   .ViewFull #ProductInfo>*:not(:first-child){
     margin:0.9em 0;
   }
+  ul li > span span:nth-of-type(1):hover + span,
+  ul li > span span:nth-of-type(2):hover{
+    max-width:200px;
+    width:150px;
+  }
 }
 
 
