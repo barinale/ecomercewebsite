@@ -59,7 +59,7 @@
             <input type="checkbox" id="MenuShow"  value="">
             <nav id="navBar">
               <ul>
-              <li><a href="#">home</a></li>
+              <li><a href="index.html">home</a></li>
               <li><a href="Collection.html" id="CollectionMenButton">men</a></li>
               <li><a href="Collection.html" id="CollectionWomenButton">women</a></li>
               <li><a href="Collection.html" id="CollectionKidsButton">kids</a></li>
@@ -208,5 +208,16 @@
         </div>
       </div>
     </footer>
+    /*tgenerate page of products depending on user click **/
+    let arrButtonsForNav = ["#CollectionMenButton","#CollectionWomenButton","#CollectionKidsButton","#CollectionAccessoiresButton"]
+    let arrButtonValues = ["Men","Women","Kids","accesoires"]
+    for(let i =0;i<arrButtonsForNav.length;i++){
+
+      document.querySelector(arrButtonsForNav[i]).addEventListener("click",(e)=>{
+        e.preventDefault();
+        window.location.href="Collection.html?type="+arrButtonValues[i];
+      })
+
+    }
   </body>
 </html>
