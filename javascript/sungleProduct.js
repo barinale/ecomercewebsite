@@ -78,7 +78,16 @@ const ss = new displayProduct(ProductsJs.default);
 
 
 
+let arrButtonsForNav = ["#CollectionMenButton","#CollectionWomenButton","#CollectionKidsButton","#CollectionAccessoiresButton"]
+let arrButtonValues = ["Men","Women","Kids","accesoires"]
+for(let i =0;i<arrButtonsForNav.length;i++){
 
+  document.querySelector(arrButtonsForNav[i]).addEventListener("click",(e)=>{
+    e.preventDefault();
+    window.location.href="Collection.html?type="+arrButtonValues[i];
+  })
+
+}
 
 
 

@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 ul{list-style: none;}
 a{text-decoration: none; color:black;}
 html{
@@ -8,12 +15,15 @@ body{
   padding:0;
 }
 body *{
-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
 margin:0;
 padding:0;
 font-family: sans-serif;
 }
-
+html,body{
+  overflow-x: hidden;
+}
 
 input[type="checkbox"]{display: none;}
 :root{
@@ -34,6 +44,10 @@ header{
   font-size: 2em;
   display: inline;
   height:40px;
+
+}
+#logo svg{
+  height:100%;
 }
 
 #logo span{
@@ -50,13 +64,14 @@ header{
   display: inline-block;
   width: 100%;
   height:7vmin;
+  max-height: 30px;
   padding:1vmin;
   white-space: nowrap;
 }
 
 #BarAcces{
   display: inline-block;
-  font-size: 4vmin;
+  font-size: 1.2em;
 }
 #BarAcces li{
   display: inline;
@@ -68,11 +83,14 @@ header{
 #HeaderCompany{
   border-bottom:1px solid var(--main-color);
   height:15vmin;
-
+  max-height: 70px;
 }
 #HeaderCompany > ul{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 #HeaderCompany > ul > li:nth-of-type(2){
   display: none;
@@ -131,6 +149,8 @@ left:-100%;
 top:0;
 z-index: 10;
 height: 100vmin;
+-webkit-transition: 1s left;
+-o-transition: 1s left;
 transition: 1s left;
 }
 #navBar ul{
@@ -157,7 +177,9 @@ transition: 1s left;
   height:32px;
   position: relative;
   opacity: 0.6;
-  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+      -ms-transform: translateY(50%);
+          transform: translateY(50%);
 }
 #navBar .CloseNav::before,.CloseNav::after{
   content:"";
@@ -167,10 +189,14 @@ transition: 1s left;
   position: absolute;
 }
 #navBar .CloseNav::before{
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 #navBar .CloseNav::after{
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 #navBar .CloseNav:hover{
   opacity: 1;
@@ -182,7 +208,9 @@ transition: 1s left;
   display: table;
     background: var(--main-color);
     margin-right: 150px;
-    transform: translateY(-20%);
+    -webkit-transform: translateY(-20%);
+        -ms-transform: translateY(-20%);
+            transform: translateY(-20%);
     position: relative;
 }
 #ForPanelItem .IconFOrPanelItem span{
@@ -211,14 +239,21 @@ transition: 1s left;
   display:none;
   background: white;
   width: 200px;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 #ForPanelItem ul li{
   display: block;
   background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 #ForPanelItem ul li img{
   width:40px;
@@ -274,7 +309,9 @@ position: relative;
 position: absolute;
 left:50%;
 top:50%;
-transform: translate(-50%,-50%);
+-webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
 width:70%;
 }
 #SliderSection .sliderItem .item .SliderTitle > *{
@@ -321,7 +358,9 @@ width:70%;
   padding:0.7em;
   position: absolute;
   top:50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 #ArrowSection .arrow:hover{
   opacity: 1;
@@ -331,7 +370,9 @@ width:70%;
   display: inline-block;
   height:15px;
   width:15px;
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 #ArrowSection .ArrowLef {
   left:5%;
@@ -352,31 +393,46 @@ width:70%;
 }
 /***Section Product**/
 #SectionProduct .productInfo .Services:nth-of-type(1){
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   grid-area: Service1;
 }
 #SectionProduct .productInfo .Services:nth-of-type(2){
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
   grid-area: Service2;
 }
 #SectionProduct .productInfo .Services:nth-of-type(3){
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
   grid-area: Service3;
 }
 #SectionProduct .Productheighlet{
+  -ms-grid-row:11;
+  -ms-grid-column:3;
   grid-area:ProductHeighl;
 }
 #SectionProduct .NewCollection{
+  -ms-grid-row:9;
+  -ms-grid-column:3;
   grid-area:NewCollection;
 }
 #SectionProduct .PROMOTION{
+  -ms-grid-row:7;
+  -ms-grid-column:3;
   grid-area:PROMOTION;
 }
 
 
 #SectionProduct .productInfo{
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 10px 1fr 10px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
   grid-template-rows: auto;
   gap:10px;
-  grid-template-areas:
+      grid-template-areas:
           ". Service1 ."
           ". Service2 ."
           ". Service3 ."
@@ -571,9 +627,15 @@ color:white;
 
 #SectionProduct .NewProduct .NewProductItem{
 
+display: -webkit-box;
+
+display: -ms-flexbox;
+
 display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
+-ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+-ms-flex-pack: distribute;
+    justify-content: space-around;
 
 }
 /**Section promoition New*/
@@ -621,9 +683,13 @@ justify-content: space-around;
   text-transform: uppercase;
 }
 #FeatuedProduct .featureItems{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #FeatuedProduct .FeaturedCollectionMen,#FeatuedProduct .FeaturedCollectionWomen{
@@ -727,14 +793,18 @@ color:var(--main-color);
 }
 #FeatuedProduct .FeaturedCollectionWatch .FeaturedCollectionWatchBackground img{
 width:100%;
-transform: rotate(-90deg);
+-webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
 }
 #FeatuedProduct .CollectionFeatured >div:nth-of-type(2){
   z-index: 2;
   position: absolute;
   left:50%;
   top:50%;
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
 }
 #FeatuedProduct .CollectionFeatured >div:nth-of-type(2) h3{
 color:var(--main-color);
@@ -765,10 +835,13 @@ z-index: 1;
 }
 
 #FeatuedProduct .FeatuedProduct{
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 10px 10px auto 10px auto 10px 10px;
   grid-template-columns: 10px auto auto 10px;
+  -ms-grid-rows: auto;
   grid-template-rows: auto;
-  grid-template-areas:
+      grid-template-areas:
   ". CollectionMen CollectionWomen ."
   ". SpiecieleOffer SpiecieleOffer ."
   ". CollectionWatch CollectionSunGlass .";
@@ -776,22 +849,33 @@ z-index: 1;
 
 }
 #FeatuedProduct .FeaturedCollectionMen{
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   margin: auto;
   grid-area: CollectionMen;
 }
 #FeatuedProduct .FeaturedCollectionWomen{
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
   margin: auto;
   grid-area: CollectionWomen;
 }
 #FeatuedProduct .FeaturedCollectionSpecialOffier{
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
   grid-area: SpiecieleOffer;
   margin: auto;
 }
 #FeatuedProduct .FeaturedCollectionWatch{
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
   margin: auto;
   grid-area: CollectionWatch;
 }
 #FeatuedProduct .FeaturedCollectionSunGlass{
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
   margin: auto;
   grid-area: CollectionSunGlass;
 }
@@ -822,17 +906,25 @@ z-index: 1;
 }
 #RecommendedProduct .RecommandedBestSellers ul
 ,#RecommendedProduct .RecommendedTopRatedItem ul{
+display: -webkit-box;
+display: -ms-flexbox;
 display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
+-ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+-ms-flex-pack: distribute;
+    justify-content: space-around;
 }
 #RecommendedProduct .RecommandedBestSellers ul li
 ,#RecommendedProduct .RecommendedTopRatedItem ul li{
   margin:10px 0;
   width:40%;
   text-align: center;
+display: -webkit-inline-box;
+display: -ms-inline-flexbox;
 display: inline-flex;
-align-items: baseline;
+-webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+        align-items: baseline;
 
 }
 #RecommendedProduct .RecommandedBestSellers .RecommandedBestItemImage
@@ -882,7 +974,9 @@ align-items: baseline;
   position:absolute;
   bottom: -15px;
   left:50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 #Testimonials .Testimonilas .TestimonialsInfo .TestimonialsImg img{
@@ -907,9 +1001,13 @@ align-items: baseline;
   text-transform: uppercase;
 }
 #FromOurBlog .FromOurBlog .FromOurBlogItems{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 #FromOurBlog .FromOurBlog .FromOurBlogItems .FromOurBlogItem{
   width:200px;
@@ -1014,7 +1112,9 @@ display: inline-block;
   left:50%;
   top:50%;
   background: #EEEEEE;
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
   white-space: nowrap;
   padding:0.3em;
 }
@@ -1032,7 +1132,9 @@ footer{
 footer .FooterEmail{
   background: white;
   padding: 0.5em 0;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 90%;
   margin: auto;
 }
@@ -1155,6 +1257,7 @@ footer .CopyrightSocialMedia ul li img{
  #navBar > ul > span{
  display:none;}
  #navBar{
+   position: -webkit-sticky;
    position: sticky;
   height:40px;
     border: 0;
@@ -1170,9 +1273,10 @@ border:none;
 }
 /**Section Product*/
 #SectionProduct .productInfo{
+  -ms-grid-columns:1fr 1fr 1fr 1fr;
   grid-template-columns:1fr 1fr 1fr 1fr;
 
-  grid-template-areas:
+      grid-template-areas:
           ". Service1 Service2 ."
           ". PROMOTION Service3 ."
           ". PROMOTION ProductHeighl ."
@@ -1206,8 +1310,10 @@ margin: auto;
 /**Featured product***/
 
 #FeatuedProduct .FeatuedProduct{
+  -ms-grid-columns: 10px 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 10px;
   grid-template-columns: 10px 1fr 1fr 1fr 1fr 10px;
-  grid-template-areas:
+  -ms-grid-rows: auto 10px auto;
+      grid-template-areas:
   ". CollectionMen SpiecieleOffer SpiecieleOffer CollectionWomen ."
   ". CollectionMen CollectionWatch CollectionSunGlass CollectionWomen  .";
   grid-gap: 10px 10px;
@@ -1222,9 +1328,58 @@ font-size: 2vmin;
 }
 /*footer**/
 footer .FooterSection{
+display: -webkit-box;
+display: -ms-flexbox;
 display: flex;
-justify-content: space-between;
-flex-wrap: wrap;
+-webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+-ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+#SectionProduct .productInfo .Services:nth-of-type(1){-ms-grid-row: 1;-ms-grid-column: 2;
+
+
+}
+#SectionProduct .productInfo .Services:nth-of-type(2){-ms-grid-row: 1;-ms-grid-column: 3;
+
+
+}
+#SectionProduct .productInfo .Services:nth-of-type(3){-ms-grid-row: 2;-ms-grid-column: 3;
+
+
+}
+#SectionProduct .Productheighlet{-ms-grid-row:3;-ms-grid-column:3;
+
+
+}
+#SectionProduct .NewCollection{-ms-grid-row:4;-ms-grid-column:3;
+
+
+}
+#SectionProduct .PROMOTION{-ms-grid-row:2;-ms-grid-row-span:3;-ms-grid-column:2;
+
+
+}
+
+#FeatuedProduct .FeaturedCollectionMen{-ms-grid-row: 1;-ms-grid-row-span: 3;-ms-grid-column: 3;
+
+}
+
+#FeatuedProduct .FeaturedCollectionWomen{-ms-grid-row: 1;-ms-grid-row-span: 3;-ms-grid-column: 9;
+
+}
+
+#FeatuedProduct .FeaturedCollectionSpecialOffier{-ms-grid-row: 1;-ms-grid-column: 5;-ms-grid-column-span: 3;
+
+}
+
+#FeatuedProduct .FeaturedCollectionWatch{-ms-grid-row: 3;-ms-grid-column: 5;
+
+}
+
+#FeatuedProduct .FeaturedCollectionSunGlass{-ms-grid-row: 3;-ms-grid-column: 7;
+
 }
 
 }
@@ -1274,9 +1429,10 @@ margin-right: 10px;
 }
 
   #SectionProduct .productInfo{
+    -ms-grid-columns:10px 1fr 1fr 1fr 10px;
     grid-template-columns:10px 1fr 1fr 1fr 10px;
 
-    grid-template-areas:
+        grid-template-areas:
             ". Service1 Service2 Service3 ."
             ". PROMOTION PROMOTION  ProductHeighl ."
             ". PROMOTION  PROMOTION NewCollection .";
@@ -1289,6 +1445,24 @@ margin-right: 10px;
   margin: auto;
 
 }
+
+  #SectionProduct .productInfo .Services:nth-of-type(1){-ms-grid-row: 1;-ms-grid-column: 2;
+  }
+
+  #SectionProduct .productInfo .Services:nth-of-type(2){-ms-grid-row: 1;-ms-grid-column: 3;
+  }
+
+  #SectionProduct .productInfo .Services:nth-of-type(3){-ms-grid-row: 1;-ms-grid-column: 4;
+  }
+
+  #SectionProduct .Productheighlet{-ms-grid-row:2;-ms-grid-column:4;
+  }
+
+  #SectionProduct .NewCollection{-ms-grid-row:3;-ms-grid-column:4;
+  }
+
+  #SectionProduct .PROMOTION{-ms-grid-row:2;-ms-grid-row-span:2;-ms-grid-column:2;-ms-grid-column-span:2;
+  }
 
 
 
