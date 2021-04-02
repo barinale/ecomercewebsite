@@ -76,11 +76,9 @@ for(let i= 0;i<12;i++){
 /*tgenerate page of products depending on user click **/
 let arrButtonsForNav = ["#CollectionMenButton","#CollectionWomenButton","#CollectionKidsButton","#CollectionAccessoiresButton"]
 let arrButtonValues = ["Men","Women","Kids","accesoires"]
-for(let i =0;i<arrButtonsForNav.length;i++){
 
-  document.querySelector(arrButtonsForNav[i]).addEventListener("click",(e)=>{
-    e.preventDefault();
-    window.location.href="Collection.html?type="+arrButtonValues[i];
-  })
 
-}
+arrButtonsForNav.forEach((item, i) => {
+  // document.querySelector(item).getAttribute("href").innerText +="dd";
+document.querySelector(item).href+="?type="+arrButtonValues[i];
+});

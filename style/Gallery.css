@@ -11,6 +11,19 @@ margin:0;
 body,html{
   overflow-x: hidden;
 }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans&display=swap');
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+span{
+  font-family: 'Montserrat', sans-serif;
+
+font-family: 'Open Sans', sans-serif;
+}
+html{
+  font-size: 14px;
+}
 /**header compentn*/
 input[type="checkbox"]{display: none;}
 ul{list-style: none;}
@@ -287,10 +300,11 @@ input[id="MenuShow"]:checked + #navBar{left:0%;}
  #navBar{
    position: -webkit-sticky;
    position: sticky;
-  height:40px;
+  height:20px;
     border: 0;
     width:100%;
     padding:0.7em 0.2em;
+
  }
  #navBar > ul >li{
 display: inline;
