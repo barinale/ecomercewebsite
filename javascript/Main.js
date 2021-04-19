@@ -82,3 +82,18 @@ arrButtonsForNav.forEach((item, i) => {
   // document.querySelector(item).getAttribute("href").innerText +="dd";
 document.querySelector(item).href+="?type="+arrButtonValues[i];
 });
+/*For Read LocalStorage**/
+// const SqurePanel = document.querySelector("#ItemAddList")
+// function ReadLocalStorage(){
+// let keys = Object.keys(localStorage);
+//
+//
+// }
+// ReadLocalStorage();
+//
+//
+// function AddToPanel(Arry){
+//   for(let i =0;i<Arry.length;i++){
+//
+//   }
+// }
