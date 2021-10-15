@@ -10,7 +10,7 @@ html{
 *{
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
 }
 a{text-decoration: none;
 color:black;}
@@ -312,7 +312,7 @@ input[id="MenuShow"]:checked + #navBar{left:0%;}
  #navBar{
    position: -webkit-sticky;
    position: sticky;
-  height:20px;
+  height:40px;
     border: 0;
     width:100%;
     padding:0.7em 0.2em;

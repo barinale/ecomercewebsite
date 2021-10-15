@@ -4,11 +4,12 @@
 * Autoprefixer: v9.7.6
 * Browsers: last 4 version
 */
-html{
-  overflow-x: hidden;
-}
+
 body{
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
+    margin:0;
+    padding:0;
+    
 }
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans&display=swap');
@@ -23,7 +24,11 @@ font-family: 'Open Sans', sans-serif;
 html{
   font-size: 14px;
 }
-*{padding:0;margin:0;}
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
 .content{width:90%;margin: auto;}
 :root{
   --color-background:#111111;
@@ -308,7 +313,7 @@ input[id="MenuShow"]:checked + #navBar{left:0%;}
  #navBar{
    position: -webkit-sticky;
    position: sticky;
-  height:20px;
+    height:40px;
     border: 0;
     width:100%;
     padding:0.7em 0.2em;
@@ -323,6 +328,7 @@ border:none;
 /*SectionTitleColection*/
 #SectionTitleColection{
   background:var(--color-background);
+
 }
 #SectionTitleColection .SectionTitleColectionTitle{
   text-align: center;
@@ -662,6 +668,10 @@ margin: 1px;
   }
 
   @media (min-width:768px) {
+    .content{
+      width:  85%;
+      margin: auto;
+    }
     #SectionToolsAndProduct{
       -ms-grid-columns: 45px auto 1em;
       grid-template-columns: 45px auto 1em;
